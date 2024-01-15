@@ -1,0 +1,572 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C37CC53E-DAC6-4D3C-8527-FA78E3E05604}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ClinicManagementSystem</RootNamespace>
+    <AssemblyName>ClinicManagementSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.4.5, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>packages\Guna.UI2.WinForms.2.0.4.5\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="clsGlobal.cs" />
+    <Compile Include="MainForms\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageAppointments\frmAddEditAppointmentInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageAppointments\frmAddEditAppointmentInfo.Designer.cs">
+      <DependentUpon>frmAddEditAppointmentInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageAppointments\frmAppointmentsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageAppointments\frmAppointmentsList.Designer.cs">
+      <DependentUpon>frmAppointmentsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageAppointments\frmShowAppointmentInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageAppointments\frmShowAppointmentInfo.Designer.cs">
+      <DependentUpon>frmShowAppointmentInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageDoctors\frmAddEditDoctorInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageDoctors\frmAddEditDoctorInfo.Designer.cs">
+      <DependentUpon>frmAddEditDoctorInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageDoctors\frmShowDoctorInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageDoctors\frmShowDoctorInfo.Designer.cs">
+      <DependentUpon>frmShowDoctorInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageMedicalRecords\frmAddEditMedicalRecordInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageMedicalRecords\frmAddEditMedicalRecordInfo.Designer.cs">
+      <DependentUpon>frmAddEditMedicalRecordInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageMedicalRecords\frmMedicalRecordsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageMedicalRecords\frmMedicalRecordsList.Designer.cs">
+      <DependentUpon>frmMedicalRecordsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageMedicalRecords\frmShowMedicalRecordInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageMedicalRecords\frmShowMedicalRecordInfo.Designer.cs">
+      <DependentUpon>frmShowMedicalRecordInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagePatients\frmAddEditPatientInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagePatients\frmAddEditPatientInfo.Designer.cs">
+      <DependentUpon>frmAddEditPatientInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagePatients\frmPatientsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagePatients\frmPatientsList.Designer.cs">
+      <DependentUpon>frmPatientsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagePatients\frmShowPatientInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagePatients\frmShowPatientInfo.Designer.cs">
+      <DependentUpon>frmShowPatientInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagePayments\frmAddEditPaymentInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagePayments\frmAddEditPaymentInfo.Designer.cs">
+      <DependentUpon>frmAddEditPaymentInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagePayments\frmPaymentsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagePayments\frmPaymentsList.Designer.cs">
+      <DependentUpon>frmPaymentsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagePayments\frmShowPaymentInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagePayments\frmShowPaymentInfo.Designer.cs">
+      <DependentUpon>frmShowPaymentInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagePeople\frmAddEditPersonInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagePeople\frmAddEditPersonInfo.Designer.cs">
+      <DependentUpon>frmAddEditPersonInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\frmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\frmDashboard.Designer.cs">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageDoctors\frmDoctorsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageDoctors\frmDoctorsList.Designer.cs">
+      <DependentUpon>frmDoctorsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagePeople\frmFindPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagePeople\frmFindPerson.Designer.cs">
+      <DependentUpon>frmFindPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagePrescriptions\frmAddEditPrescriptionInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagePrescriptions\frmAddEditPrescriptionInfo.Designer.cs">
+      <DependentUpon>frmAddEditPrescriptionInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagePrescriptions\frmPrescriptionsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagePrescriptions\frmPrescriptionsList.Designer.cs">
+      <DependentUpon>frmPrescriptionsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagePrescriptions\frmShowPrescriptionInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagePrescriptions\frmShowPrescriptionInfo.Designer.cs">
+      <DependentUpon>frmShowPrescriptionInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageSpecialities\frmAddEditSpecialityInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageSpecialities\frmAddEditSpecialityInfo.Designer.cs">
+      <DependentUpon>frmAddEditSpecialityInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageSpecialities\frmShowSpecialityInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageSpecialities\frmShowSpecialityInfo.Designer.cs">
+      <DependentUpon>frmShowSpecialityInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageSpecialities\frmSpecialitiesList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageSpecialities\frmSpecialitiesList.Designer.cs">
+      <DependentUpon>frmSpecialitiesList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageUsers\frmAddEditUserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageUsers\frmAddEditUserInfo.Designer.cs">
+      <DependentUpon>frmAddEditUserInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageUsers\frmShowUserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageUsers\frmShowUserInfo.Designer.cs">
+      <DependentUpon>frmShowUserInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageUsers\frmUsersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageUsers\frmUsersList.Designer.cs">
+      <DependentUpon>frmUsersList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\ucAddEditPersonInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucAddEditPersonInfo.Designer.cs">
+      <DependentUpon>ucAddEditPersonInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucPersonCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucPersonCard.Designer.cs">
+      <DependentUpon>ucPersonCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucSpecialityCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucSpecialityCard.Designer.cs">
+      <DependentUpon>ucSpecialityCard.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MainForms\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageAppointments\frmAddEditAppointmentInfo.resx">
+      <DependentUpon>frmAddEditAppointmentInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageAppointments\frmAppointmentsList.resx">
+      <DependentUpon>frmAppointmentsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageAppointments\frmShowAppointmentInfo.resx">
+      <DependentUpon>frmShowAppointmentInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageDoctors\frmAddEditDoctorInfo.resx">
+      <DependentUpon>frmAddEditDoctorInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageDoctors\frmShowDoctorInfo.resx">
+      <DependentUpon>frmShowDoctorInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageMedicalRecords\frmAddEditMedicalRecordInfo.resx">
+      <DependentUpon>frmAddEditMedicalRecordInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageMedicalRecords\frmMedicalRecordsList.resx">
+      <DependentUpon>frmMedicalRecordsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageMedicalRecords\frmShowMedicalRecordInfo.resx">
+      <DependentUpon>frmShowMedicalRecordInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagePatients\frmAddEditPatientInfo.resx">
+      <DependentUpon>frmAddEditPatientInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagePatients\frmPatientsList.resx">
+      <DependentUpon>frmPatientsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagePatients\frmShowPatientInfo.resx">
+      <DependentUpon>frmShowPatientInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagePayments\frmAddEditPaymentInfo.resx">
+      <DependentUpon>frmAddEditPaymentInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagePayments\frmPaymentsList.resx">
+      <DependentUpon>frmPaymentsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagePayments\frmShowPaymentInfo.resx">
+      <DependentUpon>frmShowPaymentInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagePeople\frmAddEditPersonInfo.resx">
+      <DependentUpon>frmAddEditPersonInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\frmDashboard.resx">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageDoctors\frmDoctorsList.resx">
+      <DependentUpon>frmDoctorsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagePeople\frmFindPerson.resx">
+      <DependentUpon>frmFindPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagePrescriptions\frmAddEditPrescriptionInfo.resx">
+      <DependentUpon>frmAddEditPrescriptionInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagePrescriptions\frmPrescriptionsList.resx">
+      <DependentUpon>frmPrescriptionsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagePrescriptions\frmShowPrescriptionInfo.resx">
+      <DependentUpon>frmShowPrescriptionInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageSpecialities\frmAddEditSpecialityInfo.resx">
+      <DependentUpon>frmAddEditSpecialityInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageSpecialities\frmShowSpecialityInfo.resx">
+      <DependentUpon>frmShowSpecialityInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageSpecialities\frmSpecialitiesList.resx">
+      <DependentUpon>frmSpecialitiesList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageUsers\frmAddEditUserInfo.resx">
+      <DependentUpon>frmAddEditUserInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageUsers\frmShowUserInfo.resx">
+      <DependentUpon>frmShowUserInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageUsers\frmUsersList.resx">
+      <DependentUpon>frmUsersList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UserControls\ucAddEditPersonInfo.resx">
+      <DependentUpon>ucAddEditPersonInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucPersonCard.resx">
+      <DependentUpon>ucPersonCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucSpecialityCard.resx">
+      <DependentUpon>ucSpecialityCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClinicBusinessLayer\ClinicBusinessLayer.csproj">
+      <Project>{7d0ff304-6053-4417-b77b-56bc44613dcf}</Project>
+      <Name>ClinicBusinessLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doctor %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\patient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\donate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\schedule.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invoice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medical-checkup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caduceus %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash-bin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resume-and-cv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\woman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phone-call.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\email.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\placeholder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unknown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrowhead.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search-profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-friend %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\times-square.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open-enrollment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-friend %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\id %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cardiologist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\body-scan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caduceus %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invoice1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transaction-history.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prescription %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\business-report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doctor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\patient1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stethoscope.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medical-appointment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medical-record.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prescription.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medical.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help-desk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blank-square.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pharmacy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\businessman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medicine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\personal-profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\purse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross1.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
