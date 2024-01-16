@@ -1,6 +1,8 @@
 # Clinic Management System
 
-This is a comprehensive clinic management system that allows you to efficiently manage patient records, doctor information, appointments, medical records, prescriptions, and payments. The system is built using C# with .NET Framework, Ms SQL Server for the database, ADO.NET for data access, and WinForms for the desktop interface. It follows a three-tier architecture consisting of the Data Access Layer, Business Layer, and Presentation Layer.
+This is a comprehensive clinic management system that allows you to efficiently manage patient records, doctor information, appointments, medical records, prescriptions, and payments. 
+
+It follows a three-tier architecture consisting of the Data Access Layer, Business Layer, and Presentation Layer for maintainability and scalability.
 
 ## Features
 
